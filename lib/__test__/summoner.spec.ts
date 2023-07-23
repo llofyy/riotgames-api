@@ -12,6 +12,7 @@ describe("Summoner", () => {
     () =>
       (riotClient = new RiotClient({
         apiKey: process.env.API_KEY || "",
+        region: "br1",
       }))
   );
   describe("GET BY NAME", () => {

@@ -4,8 +4,8 @@ import { SummonerClient } from "./summoner";
 export class RiotClient {
   private summonerClient: SummonerClient;
 
-  constructor({ apiKey }: IRiotClient) {
-    this.summonerClient = new SummonerClient(apiKey);
+  constructor({ apiKey, region = "na1" }: IRiotClient) {
+    this.summonerClient = new SummonerClient(apiKey, region);
   }
 
   async getSummonerByName(name: string) {

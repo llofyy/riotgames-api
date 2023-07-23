@@ -6,8 +6,10 @@ import { IApiErrorResponse } from "../utils/interface";
 
 export class SummonerClient {
   private apiKey: string;
-  constructor(apiKey: string) {
+  private region: string;
+  constructor(apiKey: string, region: string) {
     this.apiKey = apiKey;
+    this.region = region;
   }
 
   async getByName(
@@ -15,7 +17,9 @@ export class SummonerClient {
   ): Promise<ISummonerResponse | IApiErrorResponse> {
     try {
       const { data } = await axios.get(
-        `${RiotEndpoints.summoner.byName}/${name}?api_key=${this.apiKey}`
+        `${RiotEndpoints(this.region).summoner.byName}/${name}?api_key=${
+          this.apiKey
+        }`
       );
 
       return data;
@@ -29,7 +33,9 @@ export class SummonerClient {
   ): Promise<ISummonerResponse | IApiErrorResponse> {
     try {
       const { data } = await axios.get(
-        `${RiotEndpoints.summoner.byAccountId}/${accountId}?api_key=${this.apiKey}`
+        `${
+          RiotEndpoints(this.region).summoner.byAccountId
+        }/${accountId}?api_key=${this.apiKey}`
       );
 
       return data as ISummonerResponse;
@@ -43,7 +49,9 @@ export class SummonerClient {
   ): Promise<ISummonerResponse | IApiErrorResponse> {
     try {
       const { data } = await axios.get(
-        `${RiotEndpoints.summoner.byPUUID}/${puuid}?api_key=${this.apiKey}`
+        `${RiotEndpoints(this.region).summoner.byPUUID}/${puuid}?api_key=${
+          this.apiKey
+        }`
       );
 
       return data as ISummonerResponse;
@@ -55,7 +63,9 @@ export class SummonerClient {
   async getById(id: string): Promise<ISummonerResponse | IApiErrorResponse> {
     try {
       const { data } = await axios.get(
-        `${RiotEndpoints.summoner.byId}/${id}?api_key=${this.apiKey}`
+        `${RiotEndpoints(this.region).summoner.byId}/${id}?api_key=${
+          this.apiKey
+        }`
       );
 
       return data as ISummonerResponse;
