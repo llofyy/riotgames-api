@@ -1,6 +1,6 @@
 {
-  "name": "riotgames.js",
-  "version": "0.0.5",
+  "name": "riotg.api",
+  "version": "0.0.6",
   "license": "MIT",
   "main": "dist/lib/index.js",
   "types": "dist/lib/index.d.ts",
@@ -22,5 +22,18 @@
   },
   "files": [
     "/dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/llofyy/riotgames-api"
+  },
+  "keywords": [
+    "league-of-legends",
+    "valorant",
+    "tft",
+    "lol",
+    "riot",
+    "riotgames",
+    "lor"
   ]
 }
