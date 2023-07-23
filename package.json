@@ -1,7 +1,9 @@
 {
   "name": "riotgames.js",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "license": "MIT",
+  "main": "dist/lib/index.js",
+  "types": "dist/lib/index.d.ts",
   "scripts": {
     "build": "rm -r dist && tsc",
     "teste:run": "tsnd teste.ts"
@@ -12,5 +14,8 @@
   },
   "dependencies": {
     "axios": "^1.4.0"
-  }
+  },
+  "files": [
+    "/dist"
+  ]
 }

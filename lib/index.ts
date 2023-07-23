@@ -1,5 +1,5 @@
-import { IRiotClient } from "./lib/interfaces";
-import { SummonerClient } from "./lib/summoner";
+import { IRiotClient } from "./interfaces";
+import { SummonerClient } from "./summoner";
 
 export class RiotClient {
   private summonerClient: SummonerClient;
