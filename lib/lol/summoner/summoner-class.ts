@@ -1,8 +1,8 @@
-import { ApiError } from "../utils/api-error";
-import { RiotEndpoints } from "../config/riot-endpoints";
+import { ApiError } from "../../utils/api-error";
+import { RiotEndpoints } from "../../config/riot-endpoints";
 import axios, { AxiosError } from "axios";
 import { ISummonerResponse } from "./interfaces";
-import { IApiErrorResponse } from "../utils/interface";
+import { IApiErrorResponse } from "../../utils/interface";
 
 export class SummonerClient {
   private apiKey: string;

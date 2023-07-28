@@ -1,26 +1,16 @@
 import { IRiotClient } from "./interfaces";
-import { SummonerClient } from "./summoner";
+import { Lol } from "./lol";
+import { SummonerClient } from "./lol/summoner/summoner-class";
 
 export class RiotClient {
-  private summonerClient: SummonerClient;
-
+  private apiKey;
+  private region;
   constructor({ apiKey, region = "na1" }: IRiotClient) {
-    this.summonerClient = new SummonerClient(apiKey, region);
+    this.apiKey = apiKey;
+    this.region = region;
   }
 
-  async getSummonerByName(name: string) {
-    return await this.summonerClient.getByName(name);
-  }
-
-  async getSummonerByAccountId(accountId: string) {
-    return await this.summonerClient.getByAccountId(accountId);
-  }
-
-  async getSummonerByPUUID(puuid: string) {
-    return await this.summonerClient.getByPUUID(puuid);
-  }
-
-  async getSummonerById(id: string) {
-    return await this.summonerClient.getById(id);
+  lol() {
+    return new Lol({ apiKey: this.apiKey, region: this.region });
   }
 }

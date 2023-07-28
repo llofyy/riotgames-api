@@ -1,12 +1,12 @@
 export const summonerMock = {
-  id: "2-gEejEemr2vCoyZDeH1VHV5foC5z8ZtOnzpmV8qENvFDHg",
-  accountId: "C4PyytfL2IjkK7mB3Foersc7iyvQC5JPO4ugdx8o4koFKcU",
+  id: "WwOswidHQ6G6JPyi20p1l29mI-odirjPSB9VLKvNCr51pbM",
+  accountId: "zSmoJDktuXUN21Q2kwKi3ENKM-LRzrDoChrEPbpMnxP6tQP_iw3ECV9o",
   puuid:
-    "veg1lb_cei5G5Xme47aXBQjk3TzYAKgJnPsChRv3136VnietN2OCWAsI3TezJrSqer943uYxy8YQWg",
-  name: "LLOFFY",
-  profileIconId: 5089,
-  revisionDate: 1690125522736,
-  summonerLevel: 113,
+    "LTEThEi8EXKJqrbUrj3k9wl0ftbNp4_UtwqUwBqhSOBPuEOTomYVn0mA42rto-ez4uPbor0dubthag",
+  name: "lloffy",
+  profileIconId: 27,
+  revisionDate: 1527088496000,
+  summonerLevel: 1,
 };
 
 export const errorSummonerNotFound = {

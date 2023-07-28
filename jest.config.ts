@@ -5,6 +5,7 @@ const config: Config = {
   coverageProvider: "v8",
   preset: "ts-jest",
   testEnvironment: "node",
+  modulePathIgnorePatterns: ["dist"],
   coverageThreshold: {
     global: {
       branches: 80,

@@ -12,18 +12,24 @@ describe("Summoner", () => {
     () =>
       (riotClient = new RiotClient({
         apiKey: process.env.API_KEY || "",
-        region: "br1",
+        region: "na1",
       }))
   );
   describe("GET BY NAME", () => {
     it("should be return data of summoner", async () => {
-      const summoner = await riotClient.getSummonerByName(summonerMock.name);
+      const summoner = await riotClient
+        .lol()
+        .summoner()
+        .getByName(summonerMock.name);
 
       expect(summoner).toEqual(summonerMock);
     });
 
     it("should be return error when summoner not exists", async () => {
-      const summoner = await riotClient.getSummonerByName("aiuhsuiahisuhas");
+      const summoner = await riotClient
+        .lol()
+        .summoner()
+        .getByName("aiuhsuiahisuhas");
 
       expect(summoner).toEqual(errorSummonerNotFound);
     });
@@ -31,17 +37,19 @@ describe("Summoner", () => {
 
   describe("GET BY ACCOUNT ID", () => {
     it("should be return data of summoner", async () => {
-      const summoner = await riotClient.getSummonerByAccountId(
-        summonerMock.accountId
-      );
+      const summoner = await riotClient
+        .lol()
+        .summoner()
+        .getByAccountId(summonerMock.accountId);
 
       expect(summoner).toEqual(summonerMock);
     });
 
     it("should be return error when summoner not exists", async () => {
-      const summoner = await riotClient.getSummonerByAccountId(
-        "aiuhsuiahisuhas"
-      );
+      const summoner = await riotClient
+        .lol()
+        .summoner()
+        .getByAccountId("aiuhsuiahisuhas");
 
       expect(summoner).toEqual(errorSummonerBadRequest);
     });
@@ -49,13 +57,19 @@ describe("Summoner", () => {
 
   describe("GET BY PUUID", () => {
     it("should be return data of summoner", async () => {
-      const summoner = await riotClient.getSummonerByPUUID(summonerMock.puuid);
+      const summoner = await riotClient
+        .lol()
+        .summoner()
+        .getByPUUID(summonerMock.puuid);
 
       expect(summoner).toEqual(summonerMock);
     });
 
     it("should be return error when summoner not exists", async () => {
-      const summoner = await riotClient.getSummonerByPUUID("aiuhsuiahisuhas");
+      const summoner = await riotClient
+        .lol()
+        .summoner()
+        .getByPUUID("aiuhsuiahisuhas");
 
       expect(summoner).toEqual(errorSummonerBadRequest);
     });
@@ -63,13 +77,19 @@ describe("Summoner", () => {
 
   describe("GET BY ID", () => {
     it("should be return data of summoner", async () => {
-      const summoner = await riotClient.getSummonerById(summonerMock.id);
+      const summoner = await riotClient
+        .lol()
+        .summoner()
+        .getById(summonerMock.id);
 
       expect(summoner).toEqual(summonerMock);
     });
 
     it("should be return error when summoner not exists", async () => {
-      const summoner = await riotClient.getSummonerById("aiuhsuiahisuhas");
+      const summoner = await riotClient
+        .lol()
+        .summoner()
+        .getById("aiuhsuiahisuhas");
 
       expect(summoner).toEqual(errorSummonerBadRequest);
     });
